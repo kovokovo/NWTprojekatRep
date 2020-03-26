@@ -1,2 +1,2 @@
 # NWTprojekatRep
-Repozitorij za NWT
+Repozitorij za NWT - Projekat Webshop (grupa Witcher)
