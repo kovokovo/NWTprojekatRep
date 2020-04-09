@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Role;
@@ -50,5 +51,17 @@ public class RoleController {
 		roleService.save(roleObj);
 		return roleObj;
 	}
+	@RequestMapping(value = "/role", method = RequestMethod.GET)
+	public Role firstPage() {
+
+		Role role = new Role();
+		role.setAzuriranaU(null);
+		role.setKreiranaU(null);
+		role.setNazivRole("Premium korisnik");
+		role.setRolaID(1);
+
+		return role;
+	}
+
 	
 }
