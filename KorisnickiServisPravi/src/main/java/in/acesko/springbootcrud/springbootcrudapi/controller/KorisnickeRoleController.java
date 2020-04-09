@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.KorisnickeRole;
@@ -50,5 +51,16 @@ public class KorisnickeRoleController {
 		korisnickeRoleService.save(korisnickeRoleObj);
 		return korisnickeRoleObj;
 	}
+	@RequestMapping(value = "/korisnickeRole", method = RequestMethod.GET)
+	public KorisnickeRole firstPage() {
+
+		KorisnickeRole korrol = new KorisnickeRole();
+		korrol.setKorisnickaRolaID(1);
+		korrol.setKorisnikID(1);
+		korrol.setRolaID(1);
+
+		return korrol;
+	}
+
 	
 }
