@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Feedback;
@@ -50,6 +51,21 @@ public class FeedbackController {
 		feedbackService.save(feedbackObj);
 		return feedbackObj;
 	}
+	@RequestMapping(value = "/feedback", method = RequestMethod.GET)
+	public Feedback firstPage() {
+
+		Feedback fed = new Feedback();
+		fed.setFeedbackID(1);
+		fed.setKorisnikID(1);
+		fed.setNaplataID(2);
+		fed.setOcjena(5);
+		fed.setKomentar("Zadovoljan korisnik");
+
+		return fed;
+	}
+
 	
 }
+
+
 
