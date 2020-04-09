@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Korisnik;
@@ -50,5 +51,18 @@ public class KorisnikController {
 		korisnikService.save(korisnikObj);
 		return korisnikObj;
 	}
+	@RequestMapping(value = "/korisnik", method = RequestMethod.GET)
+	public Korisnik firstPage() {
+
+		Korisnik kor = new Korisnik();
+		kor.setKorisnikID(1);
+		kor.setBrojKartice("12345678");
+		kor.setGodine(20);
+		kor.setIme("Ime");
+		kor.setPrezime("Prezime");
+
+		return kor;
+	}
+
 	
 }
