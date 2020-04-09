@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.acesko.springbootcrud.springbootcrudapi.model.Naplata;
@@ -49,6 +50,19 @@ public class NaplataController {
 	public Naplata update(@RequestBody Naplata naplataObj) {
 		naplataService.save(naplataObj);
 		return naplataObj;
+	}
+	@RequestMapping(value = "/naplata", method = RequestMethod.GET)
+	public Naplata firstPage() {
+
+		Naplata nap = new Naplata();
+		nap.setNaplataID(1);
+		nap.setKorisnikID(2);
+		nap.setOpis("Opis naplate");
+		nap.setStavkaProdajeID(1);
+		nap.setValuta("BAM");
+		nap.setAdresaDostave("Adresa 14");
+
+		return nap;
 	}
 	
 }
